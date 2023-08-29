@@ -8,6 +8,17 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Russell Richards",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Russ-Rich/APIcineverse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Russ-Rich/APIcineverse/issues"
+  },
+  "homepage": "https://github.com/Russ-Rich/APIcineverse#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
