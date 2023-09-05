@@ -10,37 +10,47 @@ app.use(morgan('dev'));
 // Serve static files from 'public' folder
 app.use(express.static('public'));
 
-// GET route for '/movies'
-app.get('/movies', (req, res) => {
-  res.json({
-    top20RecentMovies: [
-      'Dune',
-      'No Time to Die',
-      'Spider-Man: No Way Home',
-      'Black Widow',
-      'A Quiet Place Part',
-      'The French Dispatch',
-      'The Suicide Squad',
-      'Shang-Chi and the Legend of the Ten Rings',
-      "Don't Look Up",
-      'Cruella',
-      'The Batman',
-      'Uncharted',
-      'Black Panther: Wakanda Forever',
-      'The Flash',
-      'Avatar: The Way of Water',
-      'Jurassic World: Dominion',
-      'The Marvels',
-      'Turning Red',
-      'Sonic the Hedgehog 2',
-      'Doctor Strange in the Multiverse of Madness',
-    ],
-  });
-});
-
 // GET route for '/'
 app.get('/', (req, res) => {
   res.send('Hello World, movie API party in the city!');
+});
+
+// GET route for '/movies' to return a list of all movies
+app.get('/movies', (req, res) => {
+  res.send('Successful GET request returning data on all the movies');
+});
+
+// GET route to return data about a single movie by title
+app.get('/movies/:title', (req, res) => {
+  res.send(
+    `Successful GET request returning data on the movie titled: ${req.params.title}`
+  );
+});
+
+// GET route to return data about a genre by name/title
+app.get('/genres/:name', (req, res) => {
+  res.send(
+    `Successful GET request returning description of the genre named: ${req.params.name}`
+  );
+});
+
+// GET route to return data about a director by name
+app.get('/directors/:name', (req, res) => {
+  res.send(
+    `Successful GET request returning data on the director named: ${req.params.name}`
+  );
+});
+
+// POST route to allow new users to register
+app.post('/users', (req, res) => {
+  res.send('Successful POST request allowing a new user to register');
+});
+
+// PUT route to allow users to update their user info (username)
+app.put('/users/:username', (req, res) => {
+  res.send(
+    `Successful PUT request allowing user ${req.params.username} to update their information`
+  );
 });
 
 // Error-handling middleware
