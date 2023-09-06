@@ -1,80 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Movie API Documentation</title>
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-    }
-    th {
-        background-color: #f4f4f4;
-    }
-</style>
-</head>
-<body>
-<h1>APIcineverse</h1>
-<p>
-APIcineverse is a tool for developers to easily access and work with movie data. It offers straightforward ways to search, sort, and manage a big collection of films.
-</p>
-<h2>API Endpoints</h2>
-<p>
-The APIcineverse API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
-</p>
-<h3>Movie Endpoints</h3>
-<table>
-    <tr>
-        <th>Request</th>
-        <th>URL</th>
-        <th>Response</th>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td>/movies</td>
-        <td>JSON array of all movies</td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td>/movies/:title</td>
-        <td>JSON object with movie details</td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td>/genres/:name</td>
-        <td>JSON object with genre description</td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td>/directors/:name</td>
-        <td>JSON object with director details</td>
-    </tr>
-</table>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/styles.css" />
+        <title>APIcineverse - Your Gateway to Movie Data</title>
+    </head>
+    <body>
+        <header>
+            <h1>APIcineverse</h1>
+            <p>
+                Grab a seat and easily explore a world of movies. It's as
+                comforting as
+                your favorite TV show binge.
+            </p>
+        </header>
 
-<h3>User Endpoints</h3>
-<table>
-    <tr>
-        <th>Request</th>
-        <th>URL</th>
-        <th>Response</th>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/users</td>
-        <td>JSON object confirming registration</td>
-    </tr>
-    <tr>
-        <td>PUT</td>
-        <td>/users/:username</td>
-        <td>JSON object confirming update</td>
-    </tr>
-</table>
+        <main>
+            <section id="api-endpoints">
+                <h2>API Endpoints</h2>
+                <p>
+                    Dive right into a seamless journey navigating through a
+                    treasure trove
+                    of movie databases. You can look forward to receiving JSON
+                    responses,
+                    interacting via standard HTTP protocols, and experiencing
+                    hassle-free
+                    authentication procedures.
+                </p>
 
-</body>
+                <h3>Movie Endpoints</h3>
+                <table id="movie-endpoints">
+                    <tr>
+                        <th>HTTP Method</th>
+                        <th>Endpoint</th>
+                        <th>Usage</th>
+                        <th>Returned Data</th>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>/movies</td>
+                        <td>Retrieve a list of all movies</td>
+                        <td>JSON array of all movies</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>/movies/:title</td>
+                        <td>Retrieve detailed information of a specific movie</td>
+                        <td>JSON object with movie details</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>/genres/:name</td>
+                        <td>Retrieve details of a specific genre</td>
+                        <td>JSON object with genre description</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>/directors/:name</td>
+                        <td>Retrieve details of a specific director</td>
+                        <td>JSON object with director details</td>
+                    </tr>
+                </table>
+
+                <h3>User Endpoints</h3>
+                <table id="user-endpoints">
+                    <tr>
+                        <th>HTTP Method</th>
+                        <th>Endpoint</th>
+                        <th>Usage</th>
+                        <th>Returned Data</th>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>/users</td>
+                        <td>Register a new user</td>
+                        <td>JSON object confirming registration</td>
+                    </tr>
+                    <tr>
+                        <td>PUT</td>
+                        <td>/users/:username</td>
+                        <td>Update details of a specific user</td>
+                        <td>JSON object confirming update</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>/users/:username/favorites</td>
+                        <td>Add a movie to a user's favorites list</td>
+                        <td>Confirmation message</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>/users/:username/favorites/:movieID</td>
+                        <td>Remove a movie from a user's favorites list</td>
+                        <td>Confirmation message or 404 error message</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>/users/:username</td>
+                        <td>Delete a user's account</td>
+                        <td>Confirmation message or 404 error message</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="examples">
+                <h2>Example Requests & Responses</h2>
+
+                <div id="example-output">
+                    <p>
+                        Here, you will find detailed examples of requests and
+                        expected
+                        responses to help you integrate with the API seamlessly.
+                        Stay tuned
+                        for updates.
+                    </p>
+                </div>
+            </section>
+
+            <section id="error-handling">
+                <h2>Error Handling</h2>
+                <p>
+                    Find guidelines on understanding and resolving error
+                    messages. Details
+                    coming soon.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                Developed by Russell Richards |
+                <a href="https://github.com/Russ-Rich/APIcineverse">GitHub
+                    Repository</a>
+            </p>
+        </footer>
+
+        <script src="/index.js"></script>
+    </body>
 </html>
